@@ -1,0 +1,65 @@
+.navigation-container {
+  width: 100%;
+  height: 13vh;
+  display: flex;
+  place-content: center;
+  border-bottom: 1px solid #33333333;
+
+  & .logo-wrapper {
+    width: 30vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & img {
+      width: 150px;
+      height: 75px;
+    }
+
+    & h1 {
+      font-size: 0.6rem;
+      font-weight: bold;
+    }
+  }
+
+  .navigation {
+    width: 100%;
+    height: inherit;
+    display: grid;
+    justify-content: start;
+    align-items: center;
+
+    & ul {
+      display: flex;
+      list-style: none;
+    }
+
+    & button {
+      text-decoration: none;
+      margin: 1rem;
+      color: #fff;
+      font-weight: 500;
+      font-size: 0.8rem;
+      padding: 0.65rem 1.2rem;
+      border-radius: 10px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    & .upload {
+      background-color: #51ce9c;
+    }
+    & .upload:hover {
+      background-color: #44ae84;
+    }
+    & .export {
+      background-color: #51abce;
+    }
+    & .export:hover {
+      background-color: #4692b1;
+    }
+  }
+}
