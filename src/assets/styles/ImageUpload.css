@@ -1,6 +1,5 @@
 form,
-input,
-label {
+.input-wrapper input {
   display: block;
 }
 form {
@@ -19,11 +18,11 @@ form {
   place-content: center;
 }
 
-input[type="file"] {
+.input-wrapper input[type="file"] {
   opacity: 0;
 }
 
-label {
+.input-wrapper label {
   background-color: #afa0f0;
   padding: 0.65rem 1.2rem;
   cursor: pointer;
@@ -32,7 +31,6 @@ label {
   font-weight: 500;
   font-size: 0.8rem;
   border-radius: 10px;
-
 }
 
 input[type="submit"] {
@@ -46,5 +44,4 @@ input[type="submit"] {
   font-weight: 500;
   font-size: 0.8rem;
   border-radius: 10px;
-
 }

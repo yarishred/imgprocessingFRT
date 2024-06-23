@@ -1,0 +1,26 @@
+.edit-options {
+  grid-column: 6 / 8;
+  grid-row: 1 / 8;
+  border-left: 1px solid #33333333;
+}
+
+.option-panel {
+  text-align: left;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: 0.5rem;
+}
+
+.option-panel > label + input{
+    display: block;
+    width: inherit;
+}
+
+.option-panel label {
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-align: left;
+}

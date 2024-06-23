@@ -1,0 +1,84 @@
+.main-viewer-container {
+  width: 100%;
+  height: inherit;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 2rem;
+}
+
+.main-viewer-container p {
+  grid-column: 1 / 6;
+  grid-row: 1 / 7;
+  text-align: center;
+  place-content: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.viewer {
+  grid-column: 1 / 6;
+  grid-row: 1 / 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.viewer img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.control-panel {
+  grid-column: 1 / 6;
+  grid-row: 6 / 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.control-panel .control-btn {
+  display: flex;
+  width: 6rem;
+  height: 6rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d0d0d0;
+  border-radius: 50%;
+  padding: 0.5rem;
+  background-color: #f5f5f5;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+
+.control-btn img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  filter: grayscale();
+}
+
+.control-btn span {
+  margin: 0.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.6rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+.control-btn:hover {
+  background-color: #f1f1f1;
+  border: 1px solid #888888;
+}
+
+.control-btn:hover > img {
+  filter: none;
+}
+
+.control-btn:hover > span {
+  color: #2141b4;
+}

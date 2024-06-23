@@ -1,43 +1,34 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
 
-export const ImageCollage = ({ setCurrentImage }) => {
-  const [getImages, setGetImages] = useState([]);
 
-  const handleGetImages = async () => {
-    try {
-      const response = await fetch("http://127.0.0.1:5500");
-      const data = await response.json();
-      setGetImages(data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
+export const ImageCollage = ({ getImages, setActiveImage }) => {
   const handleCurrentImage = (image) => {
-    setCurrentImage(image);
+    setActiveImage((activeImage) => ({
+      ...activeImage,
+      active: true,
+      currentImage: image.imageFile,
+      id: image._id
+    }));
+
   };
 
-  useEffect(() => {
-    handleGetImages();
-  }, []);
+  
 
   return (
     <article className="image-collage">
-      {getImages.map((image) => (
-        <>
+      {getImages.length > 0 ? (
+        getImages.map((image, index) => (
           <div
+            key={index}
             className="image-uploaded"
             onClick={() => handleCurrentImage(image)}
           >
-            <img
-              key={image.imageFile}
-              src={`http://localhost:5500/${image.imageFile}`}
-              alt=""
-            />
+            <img src={`http://localhost:5500/${image.imageFile}`} alt="" />
           </div>
-        </>
-      ))}
+        ))
+      ) : (
+        <div style={{ display: "none" }}></div>
+      )}
     </article>
   );
 };

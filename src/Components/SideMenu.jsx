@@ -1,18 +1,18 @@
+/* eslint-disable react/prop-types */
 import { ImageVisualizer } from "./ImageVisualizer";
 
 import "../assets/styles/SideMenu.css";
 import { ImageCollage } from "./ImageCollage";
-import { useState } from "react";
 
-export const SideMenu = () => {
-  const [currentImage, setCurrentImage] = useState({});
+export const SideMenu = ({getImages,setActiveImage, activeImage}) => {
+
 
   return (
     <section className="side-menu-container">
       <h3>Imagen en uso</h3>
-      <ImageVisualizer {...currentImage} />
+      <ImageVisualizer {...activeImage}  getImages={getImages} />
       <h3>Tus Imagenes</h3>
-      <ImageCollage setCurrentImage={setCurrentImage} />
+      <ImageCollage setActiveImage={setActiveImage} getImages={getImages} />
     </section>
   );
 };

@@ -17,6 +17,8 @@ body {
   display: none;
 }
 
+
+
 .btn {
   display: inline-block;
   padding: 0.8rem 3rem;
@@ -26,4 +28,17 @@ body {
   background-color: darkcyan;
   color: #fff;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.main-container .menu-viewer-container {
+  width: 100vw;
+  height: 87vh;
+  display: flex;
 }

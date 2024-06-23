@@ -1,27 +1,17 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import { useNavigate } from "react-router-dom";
 import "../assets/styles/ImageUpload.css";
 
 export const ImageUpload = ({ setShowModal }) => {
   const [imageUpload, setImageUpload] = useState(null);
-  // const [previewImage, setPreviewImage] = useState(null);
 
-  // const [getImages, setGetImages] = useState([]);
-  // console.log(getImages);
-  // const handleGetImages = async () => {
-  //   try {
-  //     const response = await fetch("http://127.0.0.1:5500");
-  //     const data = await response.json();
-  //     setGetImages(data);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  const navigate = useNavigate();
 
   const HandleImageUpload = (e) => {
     const file = e.target.files[0];
     setImageUpload(file);
-    // setPreviewImage(URL.createObjectURL(file));
   };
 
   const HandleSubmit = async (e) => {
@@ -35,7 +25,7 @@ export const ImageUpload = ({ setShowModal }) => {
         body: formData,
       });
       const data = await response.json();
-      console.log(data);
+
       if (!data.ok) {
         throw new Error(`Status: ${data.status}`);
       }
@@ -43,7 +33,11 @@ export const ImageUpload = ({ setShowModal }) => {
       throw new Error(err);
     }
     setShowModal(false);
+    navigate("/", { state: { newImageUploaded: true } });
   };
+
+
+  
 
   return (
     <form
