@@ -13,7 +13,7 @@ export const MainViewer = ({
   socket,
   setSocket,
   grayScaleImage,
-  histogram
+  histogram,
 }) => {
   const [option, setOption] = useState("");
   const location = useLocation();
@@ -22,8 +22,6 @@ export const MainViewer = ({
     rgboption: "/rgboption",
     histogram: "/histogram",
   };
-
-
 
   const handleOptions = (optionName) => {
     setOption(optionName);
@@ -43,7 +41,9 @@ export const MainViewer = ({
           </figure>
         </>
       ) : (
-        <div><img src={`data:image/jpeg;base64,${histogram}`} alt="" /></div>
+        <figure className="viewer">
+          <img src={`data:image/jpeg;base64,${histogram}`} alt="" />
+        </figure>
       )}
 
       <EditOptions
@@ -52,6 +52,7 @@ export const MainViewer = ({
         currentImage={currentImage}
         imageId={id}
         setSocket={setSocket}
+        histogram={histogram}
       />
 
       <article className="control-panel">

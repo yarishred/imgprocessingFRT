@@ -34,6 +34,7 @@ export const GrayScale = ({ socket,  setSocket}) => {
         step="10"
         onChange={handleValues}
       />
+   
     </form>
   );
 };

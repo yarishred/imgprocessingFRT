@@ -10,13 +10,13 @@ export const EditOptions = ({
   imageId,
   socket,
   setSocket,
+  histogram
 }) => {
   const SelectedComponent = {
     grayScale: GrayScale,
     rgbOption: RGBOption,
     histogram: Histogram,
   };
-
 
   const CurrentComponent = SelectedComponent[option];
 
@@ -40,6 +40,9 @@ export const EditOptions = ({
           imageId={imageId}
         />
       )}
+      <figure className="histogram-viewer">
+        <img src={`data:image/jpeg;base64,${histogram}`} alt="" />
+      </figure>
     </aside>
   );
 };
