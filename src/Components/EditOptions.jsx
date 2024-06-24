@@ -17,10 +17,14 @@ export const EditOptions = ({
     histogram: Histogram,
   };
 
+
   const CurrentComponent = SelectedComponent[option];
 
   return (
-    <aside className="edit-options">
+    <aside
+      className="edit-options"
+      style={{ display: !currentImage && "none" }}
+    >
       {option ? (
         <CurrentComponent
           currentImage={currentImage}

@@ -28,7 +28,9 @@
   width: 90%;
   height: 90%;
   object-fit: contain;
+
 }
+
 
 .control-panel {
   grid-column: 1 / 6;

@@ -19,7 +19,7 @@ export const CONTROL_PANEL_ICONS = [
     iconName: rgb,
     option: "RGB",
     comp: "rgbOption",
-    path: "/rgbadjust"
+    path: "/rgboption"
 
   },
 ];

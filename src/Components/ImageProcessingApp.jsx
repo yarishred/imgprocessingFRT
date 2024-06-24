@@ -22,7 +22,7 @@ export const ImageProcessingApp = () => {
     socket: null,
     idImage: "",
   });
-  const [updatedImage, setUpdatedImage] = useState(null)
+  const [updatedImage, setUpdatedImage] = useState(null);
 
   useEffect(() => {
     const newSocket = io("http://localhost:5500"); // Reemplaza con la URL de tu servidor Node.js
@@ -46,12 +46,11 @@ export const ImageProcessingApp = () => {
         idImage: activeImage.id,
       });
     }
-    if(socket.socket){
-      socket.socket.on("updatedImage", (imageUpdated)=>{
-        setUpdatedImage(imageUpdated)
-      })
+    if (socket.socket) {
+      socket.socket.on("updatedImage", (imageUpdated) => {
+        setUpdatedImage(imageUpdated);
+      });
     }
-    
   }, [socket.alpha, socket.beta, activeImage.id, socket]);
 
   const handleGetImages = async () => {
@@ -87,7 +86,7 @@ export const ImageProcessingApp = () => {
                   {...activeImage}
                   socket={socket}
                   setSocket={setSocket}
-                  imageUpdated={updatedImage}
+                  {...updatedImage}
                 />
               }
             />
@@ -99,6 +98,7 @@ export const ImageProcessingApp = () => {
                   {...activeImage}
                   socket={socket}
                   setSocket={setSocket}
+                  {...updatedImage}
                 />
               }
             />
@@ -111,11 +111,12 @@ export const ImageProcessingApp = () => {
                   socket={socket}
                   setSocket={setSocket}
                   imageUpdated={updatedImage}
+                  {...updatedImage}
                 />
               }
             />
             <Route
-              path="/rgbadjust"
+              path="/rgboption"
               exact
               element={<MainViewer {...activeImage} />}
             />
